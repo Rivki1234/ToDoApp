@@ -30,6 +30,7 @@ app.UseCors("AllowAll");
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.MapGet("/", () => "ToDoApp API is running");
 
 app.MapGet("/tasks", async (ToDoDbContext db) =>
 {
