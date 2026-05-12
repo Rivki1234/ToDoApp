@@ -6,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("ToDoDB"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ToDoDB"))
+        ServerVersion.AutoDetect(
+            builder.Configuration.GetConnectionString("ToDoDB")
+            )
     ));
 
 builder.Services.AddCors(options =>
